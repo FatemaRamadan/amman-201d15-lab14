@@ -4,15 +4,19 @@
 
 // Set up an empty cart for use on this page.
 const cart = new Cart([]);
-
+let counter = 0;
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
+Product.allProducts.push(this);
 
   //TODO: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
-  for (let i in Product.allProducts) {
-
+  for (let i=0; i<Product.allProducts.length; i++) {
+    let optinons = document.createElement('option');
+    selectElement.appendChild(optinons);
+    optinons.textContent= Product.allProducts[i].name;
+  console.log(optinons);
   }
 
 }
@@ -21,9 +25,9 @@ function populateForm() {
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
-
+  event.preventDefault();
   // TODO: Prevent the page from reloading
-
+ 
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -32,20 +36,35 @@ function handleSubmit(event) {
 
 }
 
+
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
+ let selected = CartItem.item ;
+
+  //let quantity =new  Cart;
+    
+    let count = getElementById('itemCount');
+  count.textContent= counter;
+  console.log(count);
+  
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+function updateCounter() {
+
+  if (selectElement !== null){
+    count.textContent= counter++;
+    }
+}
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
+
 }
 
 // Set up the "submit" event listener on the form.

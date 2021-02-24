@@ -1,0 +1,39 @@
+header h1{
+    font-size: 30px;
+    background-color: rgb(204, 247, 247);
+    padding:5px;
+    text-align: center;
+
+}
+nav a {
+    
+    text-decoration: none;
+    color: blueviolet;
+    font-size: 20px;
+}
+
+header nav ul li{
+    display: inline-block;
+   padding-left:50px;
+   margin-right: 35px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+
+}
+header nav ul {
+    text-align:right;
+}
+.copy{
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+footer{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+fieldset {
+    border-style: solid;
+}
