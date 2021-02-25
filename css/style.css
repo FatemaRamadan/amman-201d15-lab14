@@ -37,3 +37,22 @@ footer{
 fieldset {
     border-style: solid;
 }
+h1 { 
+    border-width: 5px;
+    border: dashed blue;
+  }
+  table {
+    
+    width: 30px;
+    text-align: center;
+    padding:40px;
+    margin-left: 175px;
+    background-color:rgb(243, 220, 243);
+    opacity:90%;
+   border: solid black 1px;
+     text-align: center;
+    
+    }
+    th{
+        padding: 30px;
+    }
