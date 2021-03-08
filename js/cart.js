@@ -10,7 +10,13 @@ function loadCart() {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     cart = new Cart(cartItems);
     console.log(cartItems);
-
+    if (localStorage) {
+        let itemsFromForm = JSON.parse(localStorage.cart);
+        for (let i = 0; i < cart.itemsCount; i++) {
+            new cart(itemsFromForm[i].name)
+            cart.addItem[i];
+        }
+    }
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
@@ -26,28 +32,23 @@ function clearCart() {}
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
     // TODO: Find the table body
-
-    let tableBody = document.getElementById('cart').getElementsByTagName('tbody')
-
+    let tableBody = document.getElementById('cart')
     let tableRow = document.createElement('tr')
-    tableMain.appendChild(tableRow)
+    tableBody.appendChild(tableRow);
+    // TODO: Iterate over the items in the cart
+    let td = document.createElement('td')
+    tableRow.appendChild(td);
+    td.textContent = cart.itemsCount;
 
-    console.log(table1)
-        // TODO: Iterate over the items in the cart
+    // TODO: Iterate over the items in the cart
 
-    for (let i = 0; i < CartItem.length; i++) {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        cart = new Cart(cartItems);
-        let tabeData = document.createElement('td')
-        tableRow.appendChild(tabeData);
-        tabeData.textContent = cartItems[i]
-
-    }
-    // TODO: Create a TR
-    // TODO: Create a TD for the delete link, quantity,  and the item
-    // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
 }
+// TODO: Create a TR
+// TODO: Create a TD for the delete link, quantity,  and the item
+// TODO: Add the TR to the TBODY and each of the TD's to the TR
+
+
 
 function removeItemFromCart(event) {
 

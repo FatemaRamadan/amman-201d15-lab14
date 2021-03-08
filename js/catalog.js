@@ -67,13 +67,7 @@ function updateCartPreview() {
     let quantityPicked = document.getElementById('quantity').value;
     localStorage.setItem("cartItem", JSON.stringify(cart[0]));
     console.log(localStorage);
-    if (localStorage) {
-        let itemsFromForm = JSON.parse(localStorage.cart);
-        for (let i = 0; i < cart.itemsCount; i++) {
-            new cart(itemsFromForm[i].name)
-            cart.addItem[i];
-        }
-    }
+
     // TODO: Add a new element to the cartContents div with that information
     let addedItems = document.getElementById('cartContents');
     let newAddedItem = document.createElement('p')
